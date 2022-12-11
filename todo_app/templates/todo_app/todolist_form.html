@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+
+<input class="btn-reject" type="button" value="Quay lại" onclick="location.href='{% url "index" %}'">
+<!-- <h3>{{ title }}</h3> -->
+<h3>Thêm danh sách mới</h3>
+<div>
+  <div>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <input class="btn" value="Xác nhận" type="submit" />
+      <input class="btn-reject" value="Hủy bỏ" type="button" onclick="location.href='{% url "index" %}'">
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<!-- Base template -->
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Simple.css-->
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="stylesheet" href="{% static 'todo.css' %}">
+
+    <title>ToDoList-Group4</title>
+</head>
+
+<body>
+    <div class="app">
+        <div>
+            <h1 class="app-heading" onclick="location.href='{% url "index" %}'">
+                To Do List App - Group4
+            </h1>
+        </div>
+        <div>
+            {% block content %}
+            Mỗi trang sẽ render ra nội dung khác nhau ở đây
+            {% endblock %}
+        </div>
+    </div>
+</body>
+
+</html>

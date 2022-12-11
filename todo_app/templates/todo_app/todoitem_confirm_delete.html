@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+
+<h3>Delete To-do Item</h3>
+
+<p>
+  Bạn có chắc chắn muốn xóa công việc: <b>{{ object.title }}</b> từ danh sách: <i>{{ todo_list.title }}</i>?
+</p>
+
+<form method="POST">
+  {% csrf_token %}
+  <input class="btn" value="Xóa" type="submit" />
+  <input class="btn-reject" value="Hủy bỏ" type="button" onclick="location.href='{% url "list"
+  todo_list.id %}';">
+</form>
+
+{% endblock %}

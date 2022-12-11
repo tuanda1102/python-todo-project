@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+  <input class="btn-reject" type="button" value="Quay lại" onclick="location.href='{% url "index" %}'">
+  <div>
+    <div>
+      <h5>{{ todo_list.title | upper }}</h5>
+    </div>
+    <ul>
+      {% for todo in object_list %}
+      <li>
+        <div>
+          <div role="button" onclick="location.href='{% url "item-update" todo_list.id todo.id %}'">
+            {{ todo.title }}
+            (Due {{ todo.due_date | date:"l, F j" }})
+          </div>
+        </div>
+      </li>
+      {% empty %}
+      <p>Chưa có công việc nào trong danh sách này.</p>
+      {% endfor %}
+    </ul>
+    <p>
+      <input class="btn" value="Thêm công việc mới" type="button" onclick="location.href='{% url "item-add" todo_list.id %}'" />
+      <input class="btn-reject" value="Xóa tất cả" type="button" onclick="location.href='{% url "list-delete" todo_list.id %}'" />
+    </p>
+  </div>
+</div>
+{% endblock %}

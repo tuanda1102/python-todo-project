@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %}
+<!--todolist_confirm_delete.html-->
+
+<h3>Xóa danh sách</h3>
+
+<p>Bạn có chắc muốn xóa <i>{{ object.title }}</i>?</p>
+
+<form method="POST">
+  {% csrf_token %}
+  <input class="btn" value="Xóa" type="submit" />
+</form>
+<input class="btn-reject" value="Hủy bỏ" type="button" onclick="location.href='{% url "index"
+%}';"> {% endblock %}

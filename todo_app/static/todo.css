@@ -1,0 +1,32 @@
+:root {
+    --primary-color: #ea80fc;
+    --gray-color: #606368;
+    --neon-color: #03dac6;
+}
+
+.btn {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.btn-reject {
+    background-color: var(--gray-color) !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+li {
+    list-style-type: none;
+}
+
+li div {
+    background-color: var(--neon-color) !important;
+    border-radius: 8px !important;
+}
+
+.app-heading {
+    font-size: 42px;
+    text-align: center;
+    cursor: pointer;
+}
